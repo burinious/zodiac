@@ -7,10 +7,12 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .background {
   position: relative;
   overflow: hidden;
 }
+
 h1 {
   color: #fff;
   text-align: center;
@@ -121,6 +123,7 @@ nav ul li a:hover {
   animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
 }
+
 #compatibilityResult.show {
   display: block;
 }
@@ -176,3 +179,27 @@ nav ul li a:hover {
   background-color: #ffef96;
 }
 
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  #form {
+    max-width: 100%;
+  }
+}
+
+/* Tablet and Mobile Landscape Responsive */
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+
+/* Large Screen Responsive */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 48px;
+  }
+}
