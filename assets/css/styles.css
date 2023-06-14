@@ -1,4 +1,6 @@
-/* Compatibility.css */
+* {
+  box-sizing: border-box;
+}
 
 /* Header and Navigation Styling */
 body {
