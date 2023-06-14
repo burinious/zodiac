@@ -1,0 +1,188 @@
+/* Compatibility.css */
+
+/* Header and Navigation Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(/assets/images/bg.jpg);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  text-align: center;
+  color: azure;
+}
+h1 {
+  font-size: 48px;
+  animation: slideIn 1s ease-in-out;
+}
+
+h2 {
+  font-size: 32px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+nav {
+  background-color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #111;
+}
+
+/* Form Styling */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 20px;
+}
+
+form select,
+form button {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+input{
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+form button {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #111;
+}
+
+/* Compatibility Result Styling */
+#horoscopeResult {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  color: teal;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
+}
+
+#horoscopeResult.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-animation {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
+#horoscopeResult.show {
+  display: block;
+}
+
+.background {
+  position: relative;
+  overflow: hidden;
+}
+
+.balls::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0, -30px);
+  }
+  50% {
+    transform: translate(100vw, 100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, -30px);
+    opacity: 1;
+  }
+}

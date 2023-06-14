@@ -1,0 +1,178 @@
+/* Compatibility.css */
+
+/* Header and Navigation Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(/assets/images/bg.jpg);
+  margin: 0;
+  padding: 0;
+}
+.background {
+  position: relative;
+  overflow: hidden;
+}
+h1 {
+  color: #fff;
+  text-align: center;
+  margin-top: 40px;
+}
+
+nav {
+  background-color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #111;
+}
+
+/* Form Styling */
+
+#form {
+  text-align: center;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+#form select,
+#form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+#form button {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#form button:hover {
+  background-color: #111;
+}
+
+/* Compatibility Result Styling */
+#compatibilityResult {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1rem;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
+}
+
+#compatibilityResult.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
+}
+
+.fade-in-animation {
+  animation-name: fade-in;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+#compatibilityResult.show {
+  display: block;
+}
+
+.snowflakes::before,
+.snowflakes::after,
+.stars::before,
+.stars::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  width: 1px;
+  height: 100px;
+  background-color: #fff;
+}
+
+.snowflakes::before,
+.stars::before {
+  animation: fall 10s linear infinite;
+}
+
+.snowflakes::after,
+.stars::after {
+  animation: fall 15s linear infinite;
+}
+
+@keyframes fall {
+  from {
+    transform: translate(0, -100px);
+  }
+  to {
+    transform: translate(0, 100vh);
+  }
+}
+
+.snowflakes::before {
+  left: 10%;
+}
+
+.snowflakes::after {
+  left: 90%;
+}
+
+.stars::before {
+  left: 30%;
+  height: 2px;
+  background-color: #ffef96;
+}
+
+.stars::after {
+  left: 70%;
+  height: 3px;
+  background-color: #ffef96;
+}
+
